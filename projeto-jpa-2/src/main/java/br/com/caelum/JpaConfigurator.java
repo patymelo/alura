@@ -24,10 +24,10 @@ public class JpaConfigurator {
 
 		ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
-		dataSource.setDriverClass("com.mysql.jdbc.Driver");
-		dataSource.setUser("root");
-		dataSource.setPassword("");
-		dataSource.setJdbcUrl("jdbc:mysql://localhost/projeto_jpa");
+		dataSource.setDriverClass("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		dataSource.setUser("sa");
+		dataSource.setPassword("Gabi2712!");
+		dataSource.setJdbcUrl("jdbc:sqlserver://localhost:1433;databaseName=casadocodigo");
 
 		dataSource.setMinPoolSize(3);
 		dataSource.setMaxPoolSize(5);
@@ -48,8 +48,7 @@ public class JpaConfigurator {
 
 		Properties props = new Properties();
 
-		props.setProperty("hibernate.dialect",
-				"org.hibernate.dialect.MySQL5InnoDBDialect");
+		props.setProperty("hibernate.dialect","org.hibernate.dialect.SQLServerDialect");
 		props.setProperty("hibernate.show_sql", "true");
 		props.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 
