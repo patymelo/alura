@@ -27,7 +27,7 @@ public class JpaConfigurator {
 		dataSource.setDriverClass("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		dataSource.setUser("sa");
 		dataSource.setPassword("Gabi2712!");
-		dataSource.setJdbcUrl("jdbc:sqlserver://localhost:1433;databaseName=casadocodigo");
+		dataSource.setJdbcUrl("jdbc:sqlserver://localhost:1433;databaseName=casadocodigo;");
 
 		dataSource.setMinPoolSize(3);
 		dataSource.setMaxPoolSize(5);
