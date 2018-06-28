@@ -65,7 +65,12 @@ public class ProdutoDao {
 		query.where((Predicate[]) predicates.toArray(new Predicate[0]));
 
 		TypedQuery<Produto> typedQuery = em.createQuery(query);
-
+		/*
+		 * Depois disso, precisamos avisar ao Hibernate, para ele salvar no cache os
+		 * resultados de alguma query. Para isso, iremos passar a seguinte pista em
+		 * nosso método getProdutos() do ProdutoDao:
+		 */
+		typedQuery.setHint("org.hibernate.cacheable", "true");
 		return typedQuery.getResultList();
 
 	}

@@ -18,17 +18,41 @@
 								<th>Hit</th>
 								<th>Miss</th>
 								<th>Conexões</th>
+								<th>Qtd transacoes</th>
+								<th>sucTsCount</th>
+								<th>Qtd Delete</th>
+								<th>Qtd Insert</th>
+								<th>Qtd Load</th>
+								<th>Qtd Update</th>
+								<th>Consulta mais demorada</th>
+								<th>Tempo da consulta mais demorada</th>
+								<th>Qtd hibernate fez consulta 2 nv</th>
+								<th>Qtd hibernate n conseguiu consulta 2 nv</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Cache</td>
 								<!-- Hit -->
-								<td></td>
+								<td>${statistics.queryCacheHitCount}</td>
 								<!-- Miss -->
-								<td></td>
-								<! -- Conections -->
-								<td></td>
+								<td>${statistics.queryCacheMissCount}</td>
+								<!-- Conexões -->
+								<td>${statistics.connectCount}</td>
+								<td>${statistics.transactionCount}</td>
+								<td>${statistics.successfulTransactionCount}</td>
+								<td>${statistics.entityDeleteCount}</td>
+								<td>${statistics.entityInsertCount}</td>
+								<td>${statistics.entityLoadCount}</td>
+								<td>${statistics.entityUpdateCount}</td>
+								<!-- retorna a consulta mais demorada  -->
+								<td>${statistics.queryExecutionMaxTimeQueryString}</td>
+								<!-- retorna o tempo de execução da consulta mais demorada -->
+								<td>${statistics.queryExecutionMaxTime}</td>
+								<!-- retorna quantas vezes o hibernate conseguiu a informação que queria através do cache -->
+								<td>${statistics.secondLevelCacheHitCount}</td>
+								<!-- retorna quantas vezes o hibernate teve que ir no banco buscar a informação que queria
+								pois ela não estava no cache -->
+								<td>${statistics.secondLevelCacheMissCount}</td>			
 							</tr>
 						</tbody>
 					</table>
